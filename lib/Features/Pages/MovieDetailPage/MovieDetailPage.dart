@@ -5,9 +5,15 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movielistapp/Features/Pages/MovieScreen/Data/Model/movieModel.dart';
 
+/// `MovieDetailPage` displays detailed information about a selected movie.
+/// This page shows the movie's image, name, rating, schedule time,
+/// summary, and genres.
 @RoutePage()
 class MovieDetailPage extends StatefulWidget {
+  /// The [movie] object contains all the details to be displayed on this page.
   final MovieModel movie;
+
+  /// Constructor for the `MovieDetailPage`.
   const MovieDetailPage({super.key, required this.movie});
 
   @override
@@ -17,8 +23,11 @@ class MovieDetailPage extends StatefulWidget {
 class _MovieDetailPageState extends State<MovieDetailPage> {
   @override
   Widget build(BuildContext context) {
+    // Retrieve the movie rating; defaults to 1.0 if not provided.
     final movieRating = widget.movie.rating ?? 1.0;
+
     return Scaffold(
+      // AppBar configuration with a centered title.
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Center(
@@ -35,12 +44,16 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
         ),
       ),
       backgroundColor: Colors.black,
+
+      /// Main content of the page wrapped in a [SingleChildScrollView]
+      /// to make it scrollable if the content overflows.
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Movie Image
+            /// Displaying the movie's image using `CachedNetworkImage`.
+            /// Fallbacks to a placeholder if the image fails to load.
             CachedNetworkImage(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 0.5,
@@ -48,12 +61,13 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
               imageUrl: widget.movie.imageMedium ?? "",
             ),
 
-            // Movie Name and Rating
+            /// Section displaying the movie's name and its rating.
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  // Movie name displayed with a specific font style.
                   Expanded(
                     child: Text(
                       widget.movie.name,
@@ -66,6 +80,7 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
                       ),
                     ),
                   ),
+                  // Movie rating represented using `RatingBarIndicator`.
                   RatingBarIndicator(
                     rating: movieRating,
                     itemSize: 20.0,
@@ -80,7 +95,7 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
               ),
             ),
 
-            // Schedule Time
+            /// Section displaying the movie's schedule time.
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Row(
@@ -105,7 +120,7 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
               ),
             ),
 
-            // Summary Section
+            /// Summary section with a heading and content.
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
               child: Text(
@@ -119,8 +134,6 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
                 ),
               ),
             ),
-
-            // Summary Text
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Text(
@@ -140,6 +153,8 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
                 ),
               ),
             ),
+
+            /// Section displaying the genres of the movie.
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Row(
@@ -147,7 +162,7 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 12),
                     child: Text(
-                      "Generes:",
+                      "Genres:",
                       style: GoogleFonts.breeSerif(
                         textStyle: const TextStyle(
                           fontSize: 20,
@@ -160,8 +175,9 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 12),
                     child: Text(
-                      "${widget.movie.genres[0]} , ${widget.movie.genres[1]}" ??
-                          "No genere available.",
+                      widget.movie.genres.isNotEmpty
+                          ? "${widget.movie.genres[0]} , ${widget.movie.genres[1]}"
+                          : "No genre available.",
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 14,
