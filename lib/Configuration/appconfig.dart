@@ -1,6 +1,5 @@
 class AppConfig {
-  static const String baseurl = "https://api.";
-  static const String imageApiUrl =
-      "https://api.unsplash.com/photos/?client_id=1o1wRXEYpfix7hujcZ6Al5e2TJiBByhNyFchhhagyUM";
-  static const String gitHubrepoApiUrl = "https://api.github.com/gists/public";
+  static const String baseurl = "https://api.tvmaze.com/search/shows?q=all";
+  static const String searchmovieapiurl ="https://api.tvmaze.com/search/shows";
+      
 }
