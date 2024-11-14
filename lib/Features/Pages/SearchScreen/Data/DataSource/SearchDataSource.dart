@@ -5,7 +5,7 @@ import 'package:movielistapp/Features/Pages/MovieScreen/Data/Model/movieModel.da
 /// Abstract class defining the contract for searching movies by term
 abstract class SearchTermDataSource {
   /// Fetch a list of movies based on the search term, page, and per_page
-  Future<List<MovieModel>> Search(int page, int per_page, String search_term);
+  Future<List<MovieModel>> Search(int page, int perPage, String searchTerm);
 }
 
 class SearchTermDataSourceimpl implements SearchTermDataSource {
@@ -17,20 +17,20 @@ class SearchTermDataSourceimpl implements SearchTermDataSource {
 
   /// Fetch movies based on the search term from the API
   /// 
-  /// Takes [page], [per_page], and [search_term] as parameters.
+  /// Takes [page], [perPage], and [searchTerm] as parameters.
   /// It constructs the API URL and fetches data from the server.
   /// On success, it parses the response and returns a list of [MovieModel].
   /// If the request fails or returns an error, an exception is thrown.
   @override
   Future<List<MovieModel>> Search(
-      int page, int per_page, String search_term) async {
+      int page, int perPage, String searchTerm) async {
     try {
       // Print search term for debugging
-      print(search_term);
+      print(searchTerm);
 
       // Make GET request to search for shows by the search term
       final response = await dio.get(
-        'https://api.tvmaze.com/search/shows?q=$search_term',
+        'https://api.tvmaze.com/search/shows?q=$searchTerm',
       );
 
       // Print the response data for debugging purposes

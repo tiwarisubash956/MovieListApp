@@ -4,5 +4,5 @@ import 'package:movielistapp/Features/Pages/MovieScreen/Data/Model/movieModel.da
 
 
 abstract class SearchRepo {
-  Future<Either<Failure, List<MovieModel>>> fetchSerachMovie(int page,int per_page,String search_term);
+  Future<Either<Failure, List<MovieModel>>> fetchSerachMovie(int page,int perPage,String searchTerm);
 }

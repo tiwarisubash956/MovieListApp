@@ -9,9 +9,12 @@ class AppRouter extends $AppRouter {
         AutoRoute(
           page: HomeRoute.page,
         ),
-        AutoRoute(page: SplashRoute.page, initial: true),
+        AutoRoute(
+          page: SplashRoute.page,
+        ),
         AutoRoute(page: MoviesRoute.page),
         AutoRoute(page: SearchRoute.page),
-        AutoRoute(page: MovieDetailRoute.page)
+        AutoRoute(page: MovieDetailRoute.page),
+        AutoRoute(page: LoginRoute.page, initial: true)
       ];
 }

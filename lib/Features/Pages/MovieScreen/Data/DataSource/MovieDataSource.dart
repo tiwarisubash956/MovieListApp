@@ -11,11 +11,11 @@ abstract class MoviesDataSource {
   ///
   /// Parameters:
   /// - [page] - The current page number to fetch.
-  /// - [per_page] - The number of items per page.
+  /// - [perPage] - The number of items per page.
   ///
   /// Returns a [Future] containing a list of [MovieModel].
   /// Throws an exception if something goes wrong.
-  Future<List<MovieModel>> fetchMoviesData(int page, int per_page);
+  Future<List<MovieModel>> fetchMoviesData(int page, int perPage);
 }
 
 /// Concrete implementation of [MoviesDataSource] that fetches data using Dio
@@ -37,12 +37,12 @@ class MoviesDataSourceimpl implements MoviesDataSource {
   ///
   /// Parameters:
   /// - [page] - The page number for paginated results.
-  /// - [per_page] - The number of results per page (currently not used in API request).
+  /// - [perPage] - The number of results per page (currently not used in API request).
   ///
   /// Returns a [Future] containing a list of [MovieModel].
   /// Throws [ServerException] if the server returns an error or the request fails.
   @override
-  Future<List<MovieModel>> fetchMoviesData(int page, int per_page) async {
+  Future<List<MovieModel>> fetchMoviesData(int page, int perPage) async {
     try {
       // Uncomment the code below if you want to fetch cached movies first.
       // If cached movies exist, return them directly.

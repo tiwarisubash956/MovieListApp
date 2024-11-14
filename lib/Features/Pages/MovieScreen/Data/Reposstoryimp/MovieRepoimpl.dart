@@ -10,13 +10,13 @@ class Moviesrepoimpl implements Moviesrepo {
   Moviesrepoimpl({required this.moviesDataSource});
   @override
   Future<Either<Failure, List<MovieModel>>> fetchMovies(
-      int page, int per_page) async {
+      int page, int perPage) async {
     try {
       final result =
-          await moviesDataSource.fetchMoviesData(page, per_page);
+          await moviesDataSource.fetchMoviesData(page, perPage);
       return right(result);
     } catch (e) {
-      return left(ServerFailure(message: "${e.toString()}"));
+      return left(ServerFailure(message: e.toString()));
     }
   }
 }

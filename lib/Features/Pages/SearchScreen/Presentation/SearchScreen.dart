@@ -12,7 +12,7 @@ class SearchScreen extends StatefulWidget {
   String searchTerm;
 
   // Constructor accepting a searchTerm to initialize the screen
-  SearchScreen({Key? key, required this.searchTerm}) : super(key: key);
+  SearchScreen({super.key, required this.searchTerm});
 
   @override
   State<SearchScreen> createState() => _SearchScreenState();
@@ -131,7 +131,7 @@ void _showOwnerInfoDialog(BuildContext context, int UserId, String UserName) {
             onPressed: () {
               Navigator.of(context).pop();  // Close the dialog when the button is pressed
             },
-            child: Text('Close'),  // Button text
+            child: const Text('Close'),  // Button text
           ),
         ],
       );

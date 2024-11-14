@@ -1,15 +1,17 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movielistapp/Configuration/routes/app_router.dart';
-import 'package:movielistapp/Features/Pages/MovieScreen/Data/DataSource/MovieDataSource.dart';
-import 'package:movielistapp/Features/Pages/MovieScreen/Data/Reposstoryimp/MovieRepoimpl.dart';
-import 'package:movielistapp/Features/Pages/MovieScreen/Presentation/bloc/movie_bloc.dart';
-import 'package:movielistapp/Features/Pages/SearchScreen/Data/DataSource/SearchDataSource.dart';
-import 'package:movielistapp/Features/Pages/SearchScreen/Data/Reposstoryimp/SearchRepoimpl.dart';
-import 'package:movielistapp/Features/Pages/SearchScreen/Presentation/bloc/search_bloc.dart';
+import 'package:movielistapp/Features/Auth/Presentation/bloc/auth_bloc.dart';
+import 'package:movielistapp/Features/Pages/HomePage/bloc/home_page_bloc.dart';
 
-void main() {
+import 'package:movielistapp/Features/Pages/MovieScreen/Presentation/bloc/movie_bloc.dart';
+
+import 'package:movielistapp/Features/Pages/SearchScreen/Presentation/bloc/search_bloc.dart';
+import 'injection_container.dart' as di;
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
   runApp(const MyApp());
 }
 
@@ -22,22 +24,16 @@ class MyApp extends StatelessWidget {
     AppRouter appRouter = AppRouter();
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-            create: (context) => MovieBloc(
-                moviesrepoimpl: Moviesrepoimpl(
-                    moviesDataSource: MoviesDataSourceimpl(
-                         dio: Dio())))),
-        BlocProvider(
-            create: (context) => SearchBloc(
-                searchRepoimpl: SearchRepoimpl(
-                    searchRepoDataSource: SearchTermDataSourceimpl(dio: Dio()))))
+        BlocProvider(create: (_) => di.sl<AuthBloc>()),
+        BlocProvider(create: (_) => di.sl<HomePageBloc>()),
+        BlocProvider(create: (_) => di.sl<MovieBloc>()),
+        BlocProvider(create: (_) => di.sl<SearchBloc>()),
       ],
       child: MaterialApp.router(
           debugShowCheckedModeBanner: false,
           title: 'Movie App',
           theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-            useMaterial3: true,
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
           ),
           routerConfig: appRouter.config()),
     );

@@ -81,9 +81,7 @@ class MovieModel {
       networkTimezone: show['network']?['country']?['timezone'],
       imageMedium: show['image']?['medium'],
       imageOriginal: show['image']?['original'],
-      summary: show['summary'] != null
-          ? show['summary'].replaceAll(RegExp(r'<[^>]*>'), '')
-          : null,
+      summary: show['summary']?.replaceAll(RegExp(r'<[^>]*>'), ''),
       imdbId: show['externals']?['imdb'],
       previousEpisodeName: json['_links']?['previousepisode']?['name'],
     );

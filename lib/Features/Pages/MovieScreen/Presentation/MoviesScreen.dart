@@ -15,7 +15,7 @@ class MoviesPage extends StatefulWidget {
   final TextEditingController searchController = TextEditingController();
 
   /// Constructor for [MoviesPage].
-  MoviesPage({Key? key}) : super(key: key);
+  MoviesPage({super.key});
 
   @override
   State<MoviesPage> createState() => _MoviesPageState();

@@ -5,7 +5,7 @@ import 'package:movielistapp/Configuration/routes/app_router.gr.dart';
 
 @RoutePage()
 class SplashPage extends StatefulWidget {
-  const SplashPage({Key? key}) : super(key: key);
+  const SplashPage({super.key});
 
   @override
   _SplashPageState createState() => _SplashPageState();
