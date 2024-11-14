@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movielistapp/Configuration/routes/app_router.dart';
-import 'package:movielistapp/Core/Storage/Secure_storage_helper.dart';
 import 'package:movielistapp/Features/Pages/MovieScreen/Data/DataSource/MovieDataSource.dart';
 import 'package:movielistapp/Features/Pages/MovieScreen/Data/Reposstoryimp/MovieRepoimpl.dart';
 import 'package:movielistapp/Features/Pages/MovieScreen/Presentation/bloc/movie_bloc.dart';
