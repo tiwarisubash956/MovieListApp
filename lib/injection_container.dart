@@ -4,6 +4,8 @@ import 'package:movielistapp/Core/Network/dio_config.dart';
 import 'package:movielistapp/Features/Auth/Data/DataSources/AuthDataSource.dart';
 import 'package:movielistapp/Features/Auth/Data/Repository/AuthRepoImpl.dart';
 import 'package:movielistapp/Features/Auth/Domain/Repository/AuthRepo.dart';
+import 'package:movielistapp/Features/Auth/Domain/UseCases/CheckAuthStatusUsecase.dart';
+import 'package:movielistapp/Features/Auth/Domain/UseCases/LogOutUsecase.dart';
 import 'package:movielistapp/Features/Auth/Domain/UseCases/SignInUseCase.dart';
 import 'package:movielistapp/Features/Auth/Domain/UseCases/signupUsecase.dart';
 import 'package:movielistapp/Features/Auth/Presentation/bloc/auth_bloc.dart';
@@ -20,7 +22,11 @@ import 'package:movielistapp/Features/Pages/SearchScreen/Presentation/bloc/searc
 final sl = GetIt.instance;
 
 Future<void> init() async {
-  sl.registerFactory(() => AuthBloc(signinusecase: sl(), signupusecase: sl()));
+  sl.registerFactory(() => AuthBloc(
+      logoutUsecase: sl(),
+      checkAuthStatusUsecase: sl(),
+      signinusecase: sl(),
+      signupusecase: sl()));
 
   sl.registerFactory(() => HomePageBloc());
 
@@ -32,6 +38,8 @@ Future<void> init() async {
 
   sl.registerFactory(() => Signupusecase(authrepo: sl()));
   sl.registerFactory(() => Signinusecase(authrepo: sl()));
+  sl.registerFactory(() => CheckAuthStatusUsecase(authrepo: sl()));
+  sl.registerFactory(() => LogoutUsecase(authrepo: sl()));
 
   // Register Dio for network calls
   sl.registerLazySingleton(() => createDio());

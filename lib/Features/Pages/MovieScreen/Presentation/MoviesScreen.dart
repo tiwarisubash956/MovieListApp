@@ -5,6 +5,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:movielistapp/Configuration/routes/app_router.gr.dart';
 import 'package:movielistapp/Core/Database/DatabaseService.dart';
 import 'package:movielistapp/Features/Pages/MovieScreen/Presentation/bloc/movie_bloc.dart';
+import 'package:movielistapp/Features/Widgets/CustomDrawer.dart';
 
 /// The [MoviesPage] widget displays a list of movies fetched from an API.
 /// It uses [MovieBloc] for state management and supports infinite scrolling
@@ -62,13 +63,17 @@ class _MoviesPageState extends State<MoviesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
+      drawer: CustomDrawer(),
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: const Text(
-          "MovieFlex",
-          style: TextStyle(color: Colors.white, fontSize: 20),
+        iconTheme: const IconThemeData(
+          color: Colors.red, // Change the drawer icon color here
         ),
+        backgroundColor: Colors.black,
         actions: [
+          const Text(
+            "MovieFlex",
+            style: TextStyle(color: Colors.red, fontSize: 20),
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: SizedBox(
@@ -89,8 +94,8 @@ class _MoviesPageState extends State<MoviesPage> {
                 trailing: [
                   IconButton(
                     onPressed: () {
-                      context.router.push(
-                          SearchRoute(searchTerm: widget.searchController.text));
+                      context.router.push(SearchRoute(
+                          searchTerm: widget.searchController.text));
                     },
                     icon: const Icon(Icons.search),
                   )
@@ -105,7 +110,7 @@ class _MoviesPageState extends State<MoviesPage> {
           // Show a loading indicator when movies are being fetched.
           if (state is MovieLoadingState) {
             return const Center(child: CircularProgressIndicator());
-          } 
+          }
           // Display the list of movies if successfully loaded.
           else if (state is MovieLodedState) {
             return GridView.builder(
@@ -180,7 +185,7 @@ class _MoviesPageState extends State<MoviesPage> {
                 );
               },
             );
-          } 
+          }
           // Display an error message if there was an error loading movies.
           else if (state is MoviesErrorState) {
             return Center(child: Text(state.message));

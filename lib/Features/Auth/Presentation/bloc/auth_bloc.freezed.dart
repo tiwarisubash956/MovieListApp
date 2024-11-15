@@ -23,6 +23,7 @@ mixin _$AuthEvent {
     required TResult Function(String message) AuthErrorEvent,
     required TResult Function(String Email, String Password) SignInEvent,
     required TResult Function(String Email, String Password) SignUpEvent,
+    required TResult Function() CheckAuthStatus,
     required TResult Function() LogoutEvent,
   }) =>
       throw _privateConstructorUsedError;
@@ -33,6 +34,7 @@ mixin _$AuthEvent {
     TResult? Function(String message)? AuthErrorEvent,
     TResult? Function(String Email, String Password)? SignInEvent,
     TResult? Function(String Email, String Password)? SignUpEvent,
+    TResult? Function()? CheckAuthStatus,
     TResult? Function()? LogoutEvent,
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +45,7 @@ mixin _$AuthEvent {
     TResult Function(String message)? AuthErrorEvent,
     TResult Function(String Email, String Password)? SignInEvent,
     TResult Function(String Email, String Password)? SignUpEvent,
+    TResult Function()? CheckAuthStatus,
     TResult Function()? LogoutEvent,
     required TResult orElse(),
   }) =>
@@ -54,6 +57,7 @@ mixin _$AuthEvent {
     required TResult Function(AuthErrorEvent value) AuthErrorEvent,
     required TResult Function(Signin value) SignInEvent,
     required TResult Function(SignUp value) SignUpEvent,
+    required TResult Function(CheckAuthStatus value) CheckAuthStatus,
     required TResult Function(LogOut value) LogoutEvent,
   }) =>
       throw _privateConstructorUsedError;
@@ -64,6 +68,7 @@ mixin _$AuthEvent {
     TResult? Function(AuthErrorEvent value)? AuthErrorEvent,
     TResult? Function(Signin value)? SignInEvent,
     TResult? Function(SignUp value)? SignUpEvent,
+    TResult? Function(CheckAuthStatus value)? CheckAuthStatus,
     TResult? Function(LogOut value)? LogoutEvent,
   }) =>
       throw _privateConstructorUsedError;
@@ -74,6 +79,7 @@ mixin _$AuthEvent {
     TResult Function(AuthErrorEvent value)? AuthErrorEvent,
     TResult Function(Signin value)? SignInEvent,
     TResult Function(SignUp value)? SignUpEvent,
+    TResult Function(CheckAuthStatus value)? CheckAuthStatus,
     TResult Function(LogOut value)? LogoutEvent,
     required TResult orElse(),
   }) =>
@@ -152,6 +158,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     required TResult Function(String message) AuthErrorEvent,
     required TResult Function(String Email, String Password) SignInEvent,
     required TResult Function(String Email, String Password) SignUpEvent,
+    required TResult Function() CheckAuthStatus,
     required TResult Function() LogoutEvent,
   }) {
     return started();
@@ -165,6 +172,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult? Function(String message)? AuthErrorEvent,
     TResult? Function(String Email, String Password)? SignInEvent,
     TResult? Function(String Email, String Password)? SignUpEvent,
+    TResult? Function()? CheckAuthStatus,
     TResult? Function()? LogoutEvent,
   }) {
     return started?.call();
@@ -178,6 +186,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult Function(String message)? AuthErrorEvent,
     TResult Function(String Email, String Password)? SignInEvent,
     TResult Function(String Email, String Password)? SignUpEvent,
+    TResult Function()? CheckAuthStatus,
     TResult Function()? LogoutEvent,
     required TResult orElse(),
   }) {
@@ -195,6 +204,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     required TResult Function(AuthErrorEvent value) AuthErrorEvent,
     required TResult Function(Signin value) SignInEvent,
     required TResult Function(SignUp value) SignUpEvent,
+    required TResult Function(CheckAuthStatus value) CheckAuthStatus,
     required TResult Function(LogOut value) LogoutEvent,
   }) {
     return started(this);
@@ -208,6 +218,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult? Function(AuthErrorEvent value)? AuthErrorEvent,
     TResult? Function(Signin value)? SignInEvent,
     TResult? Function(SignUp value)? SignUpEvent,
+    TResult? Function(CheckAuthStatus value)? CheckAuthStatus,
     TResult? Function(LogOut value)? LogoutEvent,
   }) {
     return started?.call(this);
@@ -221,6 +232,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult Function(AuthErrorEvent value)? AuthErrorEvent,
     TResult Function(Signin value)? SignInEvent,
     TResult Function(SignUp value)? SignUpEvent,
+    TResult Function(CheckAuthStatus value)? CheckAuthStatus,
     TResult Function(LogOut value)? LogoutEvent,
     required TResult orElse(),
   }) {
@@ -287,6 +299,7 @@ class _$LoadingImpl with DiagnosticableTreeMixin implements Loading {
     required TResult Function(String message) AuthErrorEvent,
     required TResult Function(String Email, String Password) SignInEvent,
     required TResult Function(String Email, String Password) SignUpEvent,
+    required TResult Function() CheckAuthStatus,
     required TResult Function() LogoutEvent,
   }) {
     return LoadingEvent();
@@ -300,6 +313,7 @@ class _$LoadingImpl with DiagnosticableTreeMixin implements Loading {
     TResult? Function(String message)? AuthErrorEvent,
     TResult? Function(String Email, String Password)? SignInEvent,
     TResult? Function(String Email, String Password)? SignUpEvent,
+    TResult? Function()? CheckAuthStatus,
     TResult? Function()? LogoutEvent,
   }) {
     return LoadingEvent?.call();
@@ -313,6 +327,7 @@ class _$LoadingImpl with DiagnosticableTreeMixin implements Loading {
     TResult Function(String message)? AuthErrorEvent,
     TResult Function(String Email, String Password)? SignInEvent,
     TResult Function(String Email, String Password)? SignUpEvent,
+    TResult Function()? CheckAuthStatus,
     TResult Function()? LogoutEvent,
     required TResult orElse(),
   }) {
@@ -330,6 +345,7 @@ class _$LoadingImpl with DiagnosticableTreeMixin implements Loading {
     required TResult Function(AuthErrorEvent value) AuthErrorEvent,
     required TResult Function(Signin value) SignInEvent,
     required TResult Function(SignUp value) SignUpEvent,
+    required TResult Function(CheckAuthStatus value) CheckAuthStatus,
     required TResult Function(LogOut value) LogoutEvent,
   }) {
     return LoadingEvent(this);
@@ -343,6 +359,7 @@ class _$LoadingImpl with DiagnosticableTreeMixin implements Loading {
     TResult? Function(AuthErrorEvent value)? AuthErrorEvent,
     TResult? Function(Signin value)? SignInEvent,
     TResult? Function(SignUp value)? SignUpEvent,
+    TResult? Function(CheckAuthStatus value)? CheckAuthStatus,
     TResult? Function(LogOut value)? LogoutEvent,
   }) {
     return LoadingEvent?.call(this);
@@ -356,6 +373,7 @@ class _$LoadingImpl with DiagnosticableTreeMixin implements Loading {
     TResult Function(AuthErrorEvent value)? AuthErrorEvent,
     TResult Function(Signin value)? SignInEvent,
     TResult Function(SignUp value)? SignUpEvent,
+    TResult Function(CheckAuthStatus value)? CheckAuthStatus,
     TResult Function(LogOut value)? LogoutEvent,
     required TResult orElse(),
   }) {
@@ -454,6 +472,7 @@ class _$AuthErrorEventImpl
     required TResult Function(String message) AuthErrorEvent,
     required TResult Function(String Email, String Password) SignInEvent,
     required TResult Function(String Email, String Password) SignUpEvent,
+    required TResult Function() CheckAuthStatus,
     required TResult Function() LogoutEvent,
   }) {
     return AuthErrorEvent(message);
@@ -467,6 +486,7 @@ class _$AuthErrorEventImpl
     TResult? Function(String message)? AuthErrorEvent,
     TResult? Function(String Email, String Password)? SignInEvent,
     TResult? Function(String Email, String Password)? SignUpEvent,
+    TResult? Function()? CheckAuthStatus,
     TResult? Function()? LogoutEvent,
   }) {
     return AuthErrorEvent?.call(message);
@@ -480,6 +500,7 @@ class _$AuthErrorEventImpl
     TResult Function(String message)? AuthErrorEvent,
     TResult Function(String Email, String Password)? SignInEvent,
     TResult Function(String Email, String Password)? SignUpEvent,
+    TResult Function()? CheckAuthStatus,
     TResult Function()? LogoutEvent,
     required TResult orElse(),
   }) {
@@ -497,6 +518,7 @@ class _$AuthErrorEventImpl
     required TResult Function(AuthErrorEvent value) AuthErrorEvent,
     required TResult Function(Signin value) SignInEvent,
     required TResult Function(SignUp value) SignUpEvent,
+    required TResult Function(CheckAuthStatus value) CheckAuthStatus,
     required TResult Function(LogOut value) LogoutEvent,
   }) {
     return AuthErrorEvent(this);
@@ -510,6 +532,7 @@ class _$AuthErrorEventImpl
     TResult? Function(AuthErrorEvent value)? AuthErrorEvent,
     TResult? Function(Signin value)? SignInEvent,
     TResult? Function(SignUp value)? SignUpEvent,
+    TResult? Function(CheckAuthStatus value)? CheckAuthStatus,
     TResult? Function(LogOut value)? LogoutEvent,
   }) {
     return AuthErrorEvent?.call(this);
@@ -523,6 +546,7 @@ class _$AuthErrorEventImpl
     TResult Function(AuthErrorEvent value)? AuthErrorEvent,
     TResult Function(Signin value)? SignInEvent,
     TResult Function(SignUp value)? SignUpEvent,
+    TResult Function(CheckAuthStatus value)? CheckAuthStatus,
     TResult Function(LogOut value)? LogoutEvent,
     required TResult orElse(),
   }) {
@@ -636,6 +660,7 @@ class _$SigninImpl with DiagnosticableTreeMixin implements Signin {
     required TResult Function(String message) AuthErrorEvent,
     required TResult Function(String Email, String Password) SignInEvent,
     required TResult Function(String Email, String Password) SignUpEvent,
+    required TResult Function() CheckAuthStatus,
     required TResult Function() LogoutEvent,
   }) {
     return SignInEvent(Email, Password);
@@ -649,6 +674,7 @@ class _$SigninImpl with DiagnosticableTreeMixin implements Signin {
     TResult? Function(String message)? AuthErrorEvent,
     TResult? Function(String Email, String Password)? SignInEvent,
     TResult? Function(String Email, String Password)? SignUpEvent,
+    TResult? Function()? CheckAuthStatus,
     TResult? Function()? LogoutEvent,
   }) {
     return SignInEvent?.call(Email, Password);
@@ -662,6 +688,7 @@ class _$SigninImpl with DiagnosticableTreeMixin implements Signin {
     TResult Function(String message)? AuthErrorEvent,
     TResult Function(String Email, String Password)? SignInEvent,
     TResult Function(String Email, String Password)? SignUpEvent,
+    TResult Function()? CheckAuthStatus,
     TResult Function()? LogoutEvent,
     required TResult orElse(),
   }) {
@@ -679,6 +706,7 @@ class _$SigninImpl with DiagnosticableTreeMixin implements Signin {
     required TResult Function(AuthErrorEvent value) AuthErrorEvent,
     required TResult Function(Signin value) SignInEvent,
     required TResult Function(SignUp value) SignUpEvent,
+    required TResult Function(CheckAuthStatus value) CheckAuthStatus,
     required TResult Function(LogOut value) LogoutEvent,
   }) {
     return SignInEvent(this);
@@ -692,6 +720,7 @@ class _$SigninImpl with DiagnosticableTreeMixin implements Signin {
     TResult? Function(AuthErrorEvent value)? AuthErrorEvent,
     TResult? Function(Signin value)? SignInEvent,
     TResult? Function(SignUp value)? SignUpEvent,
+    TResult? Function(CheckAuthStatus value)? CheckAuthStatus,
     TResult? Function(LogOut value)? LogoutEvent,
   }) {
     return SignInEvent?.call(this);
@@ -705,6 +734,7 @@ class _$SigninImpl with DiagnosticableTreeMixin implements Signin {
     TResult Function(AuthErrorEvent value)? AuthErrorEvent,
     TResult Function(Signin value)? SignInEvent,
     TResult Function(SignUp value)? SignUpEvent,
+    TResult Function(CheckAuthStatus value)? CheckAuthStatus,
     TResult Function(LogOut value)? LogoutEvent,
     required TResult orElse(),
   }) {
@@ -820,6 +850,7 @@ class _$SignUpImpl with DiagnosticableTreeMixin implements SignUp {
     required TResult Function(String message) AuthErrorEvent,
     required TResult Function(String Email, String Password) SignInEvent,
     required TResult Function(String Email, String Password) SignUpEvent,
+    required TResult Function() CheckAuthStatus,
     required TResult Function() LogoutEvent,
   }) {
     return SignUpEvent(Email, Password);
@@ -833,6 +864,7 @@ class _$SignUpImpl with DiagnosticableTreeMixin implements SignUp {
     TResult? Function(String message)? AuthErrorEvent,
     TResult? Function(String Email, String Password)? SignInEvent,
     TResult? Function(String Email, String Password)? SignUpEvent,
+    TResult? Function()? CheckAuthStatus,
     TResult? Function()? LogoutEvent,
   }) {
     return SignUpEvent?.call(Email, Password);
@@ -846,6 +878,7 @@ class _$SignUpImpl with DiagnosticableTreeMixin implements SignUp {
     TResult Function(String message)? AuthErrorEvent,
     TResult Function(String Email, String Password)? SignInEvent,
     TResult Function(String Email, String Password)? SignUpEvent,
+    TResult Function()? CheckAuthStatus,
     TResult Function()? LogoutEvent,
     required TResult orElse(),
   }) {
@@ -863,6 +896,7 @@ class _$SignUpImpl with DiagnosticableTreeMixin implements SignUp {
     required TResult Function(AuthErrorEvent value) AuthErrorEvent,
     required TResult Function(Signin value) SignInEvent,
     required TResult Function(SignUp value) SignUpEvent,
+    required TResult Function(CheckAuthStatus value) CheckAuthStatus,
     required TResult Function(LogOut value) LogoutEvent,
   }) {
     return SignUpEvent(this);
@@ -876,6 +910,7 @@ class _$SignUpImpl with DiagnosticableTreeMixin implements SignUp {
     TResult? Function(AuthErrorEvent value)? AuthErrorEvent,
     TResult? Function(Signin value)? SignInEvent,
     TResult? Function(SignUp value)? SignUpEvent,
+    TResult? Function(CheckAuthStatus value)? CheckAuthStatus,
     TResult? Function(LogOut value)? LogoutEvent,
   }) {
     return SignUpEvent?.call(this);
@@ -889,6 +924,7 @@ class _$SignUpImpl with DiagnosticableTreeMixin implements SignUp {
     TResult Function(AuthErrorEvent value)? AuthErrorEvent,
     TResult Function(Signin value)? SignInEvent,
     TResult Function(SignUp value)? SignUpEvent,
+    TResult Function(CheckAuthStatus value)? CheckAuthStatus,
     TResult Function(LogOut value)? LogoutEvent,
     required TResult orElse(),
   }) {
@@ -911,6 +947,149 @@ abstract class SignUp implements AuthEvent {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SignUpImplCopyWith<_$SignUpImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CheckAuthStatusImplCopyWith<$Res> {
+  factory _$$CheckAuthStatusImplCopyWith(_$CheckAuthStatusImpl value,
+          $Res Function(_$CheckAuthStatusImpl) then) =
+      __$$CheckAuthStatusImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CheckAuthStatusImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$CheckAuthStatusImpl>
+    implements _$$CheckAuthStatusImplCopyWith<$Res> {
+  __$$CheckAuthStatusImplCopyWithImpl(
+      _$CheckAuthStatusImpl _value, $Res Function(_$CheckAuthStatusImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$CheckAuthStatusImpl
+    with DiagnosticableTreeMixin
+    implements CheckAuthStatus {
+  const _$CheckAuthStatusImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AuthEvent.CheckAuthStatus()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'AuthEvent.CheckAuthStatus'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$CheckAuthStatusImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() LoadingEvent,
+    required TResult Function(String message) AuthErrorEvent,
+    required TResult Function(String Email, String Password) SignInEvent,
+    required TResult Function(String Email, String Password) SignUpEvent,
+    required TResult Function() CheckAuthStatus,
+    required TResult Function() LogoutEvent,
+  }) {
+    return CheckAuthStatus();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? LoadingEvent,
+    TResult? Function(String message)? AuthErrorEvent,
+    TResult? Function(String Email, String Password)? SignInEvent,
+    TResult? Function(String Email, String Password)? SignUpEvent,
+    TResult? Function()? CheckAuthStatus,
+    TResult? Function()? LogoutEvent,
+  }) {
+    return CheckAuthStatus?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? LoadingEvent,
+    TResult Function(String message)? AuthErrorEvent,
+    TResult Function(String Email, String Password)? SignInEvent,
+    TResult Function(String Email, String Password)? SignUpEvent,
+    TResult Function()? CheckAuthStatus,
+    TResult Function()? LogoutEvent,
+    required TResult orElse(),
+  }) {
+    if (CheckAuthStatus != null) {
+      return CheckAuthStatus();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(Loading value) LoadingEvent,
+    required TResult Function(AuthErrorEvent value) AuthErrorEvent,
+    required TResult Function(Signin value) SignInEvent,
+    required TResult Function(SignUp value) SignUpEvent,
+    required TResult Function(CheckAuthStatus value) CheckAuthStatus,
+    required TResult Function(LogOut value) LogoutEvent,
+  }) {
+    return CheckAuthStatus(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(Loading value)? LoadingEvent,
+    TResult? Function(AuthErrorEvent value)? AuthErrorEvent,
+    TResult? Function(Signin value)? SignInEvent,
+    TResult? Function(SignUp value)? SignUpEvent,
+    TResult? Function(CheckAuthStatus value)? CheckAuthStatus,
+    TResult? Function(LogOut value)? LogoutEvent,
+  }) {
+    return CheckAuthStatus?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(Loading value)? LoadingEvent,
+    TResult Function(AuthErrorEvent value)? AuthErrorEvent,
+    TResult Function(Signin value)? SignInEvent,
+    TResult Function(SignUp value)? SignUpEvent,
+    TResult Function(CheckAuthStatus value)? CheckAuthStatus,
+    TResult Function(LogOut value)? LogoutEvent,
+    required TResult orElse(),
+  }) {
+    if (CheckAuthStatus != null) {
+      return CheckAuthStatus(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckAuthStatus implements AuthEvent {
+  const factory CheckAuthStatus() = _$CheckAuthStatusImpl;
 }
 
 /// @nodoc
@@ -965,6 +1144,7 @@ class _$LogOutImpl with DiagnosticableTreeMixin implements LogOut {
     required TResult Function(String message) AuthErrorEvent,
     required TResult Function(String Email, String Password) SignInEvent,
     required TResult Function(String Email, String Password) SignUpEvent,
+    required TResult Function() CheckAuthStatus,
     required TResult Function() LogoutEvent,
   }) {
     return LogoutEvent();
@@ -978,6 +1158,7 @@ class _$LogOutImpl with DiagnosticableTreeMixin implements LogOut {
     TResult? Function(String message)? AuthErrorEvent,
     TResult? Function(String Email, String Password)? SignInEvent,
     TResult? Function(String Email, String Password)? SignUpEvent,
+    TResult? Function()? CheckAuthStatus,
     TResult? Function()? LogoutEvent,
   }) {
     return LogoutEvent?.call();
@@ -991,6 +1172,7 @@ class _$LogOutImpl with DiagnosticableTreeMixin implements LogOut {
     TResult Function(String message)? AuthErrorEvent,
     TResult Function(String Email, String Password)? SignInEvent,
     TResult Function(String Email, String Password)? SignUpEvent,
+    TResult Function()? CheckAuthStatus,
     TResult Function()? LogoutEvent,
     required TResult orElse(),
   }) {
@@ -1008,6 +1190,7 @@ class _$LogOutImpl with DiagnosticableTreeMixin implements LogOut {
     required TResult Function(AuthErrorEvent value) AuthErrorEvent,
     required TResult Function(Signin value) SignInEvent,
     required TResult Function(SignUp value) SignUpEvent,
+    required TResult Function(CheckAuthStatus value) CheckAuthStatus,
     required TResult Function(LogOut value) LogoutEvent,
   }) {
     return LogoutEvent(this);
@@ -1021,6 +1204,7 @@ class _$LogOutImpl with DiagnosticableTreeMixin implements LogOut {
     TResult? Function(AuthErrorEvent value)? AuthErrorEvent,
     TResult? Function(Signin value)? SignInEvent,
     TResult? Function(SignUp value)? SignUpEvent,
+    TResult? Function(CheckAuthStatus value)? CheckAuthStatus,
     TResult? Function(LogOut value)? LogoutEvent,
   }) {
     return LogoutEvent?.call(this);
@@ -1034,6 +1218,7 @@ class _$LogOutImpl with DiagnosticableTreeMixin implements LogOut {
     TResult Function(AuthErrorEvent value)? AuthErrorEvent,
     TResult Function(Signin value)? SignInEvent,
     TResult Function(SignUp value)? SignUpEvent,
+    TResult Function(CheckAuthStatus value)? CheckAuthStatus,
     TResult Function(LogOut value)? LogoutEvent,
     required TResult orElse(),
   }) {
@@ -1055,6 +1240,8 @@ mixin _$AuthState {
     required TResult Function() initial,
     required TResult Function(String mesage) authError,
     required TResult Function(UserModel userentity) authenticated,
+    required TResult Function(UserModel? usermode) logined,
+    required TResult Function() logOuted,
     required TResult Function() signupSuccessState,
   }) =>
       throw _privateConstructorUsedError;
@@ -1063,6 +1250,8 @@ mixin _$AuthState {
     TResult? Function()? initial,
     TResult? Function(String mesage)? authError,
     TResult? Function(UserModel userentity)? authenticated,
+    TResult? Function(UserModel? usermode)? logined,
+    TResult? Function()? logOuted,
     TResult? Function()? signupSuccessState,
   }) =>
       throw _privateConstructorUsedError;
@@ -1071,6 +1260,8 @@ mixin _$AuthState {
     TResult Function()? initial,
     TResult Function(String mesage)? authError,
     TResult Function(UserModel userentity)? authenticated,
+    TResult Function(UserModel? usermode)? logined,
+    TResult Function()? logOuted,
     TResult Function()? signupSuccessState,
     required TResult orElse(),
   }) =>
@@ -1080,6 +1271,8 @@ mixin _$AuthState {
     required TResult Function(_Initial value) initial,
     required TResult Function(AuthError value) authError,
     required TResult Function(Authenticated value) authenticated,
+    required TResult Function(Logined value) logined,
+    required TResult Function(logOuted value) logOuted,
     required TResult Function(SignupSuccessState value) signupSuccessState,
   }) =>
       throw _privateConstructorUsedError;
@@ -1088,6 +1281,8 @@ mixin _$AuthState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(AuthError value)? authError,
     TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(Logined value)? logined,
+    TResult? Function(logOuted value)? logOuted,
     TResult? Function(SignupSuccessState value)? signupSuccessState,
   }) =>
       throw _privateConstructorUsedError;
@@ -1096,6 +1291,8 @@ mixin _$AuthState {
     TResult Function(_Initial value)? initial,
     TResult Function(AuthError value)? authError,
     TResult Function(Authenticated value)? authenticated,
+    TResult Function(Logined value)? logined,
+    TResult Function(logOuted value)? logOuted,
     TResult Function(SignupSuccessState value)? signupSuccessState,
     required TResult orElse(),
   }) =>
@@ -1172,6 +1369,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     required TResult Function() initial,
     required TResult Function(String mesage) authError,
     required TResult Function(UserModel userentity) authenticated,
+    required TResult Function(UserModel? usermode) logined,
+    required TResult Function() logOuted,
     required TResult Function() signupSuccessState,
   }) {
     return initial();
@@ -1183,6 +1382,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult? Function()? initial,
     TResult? Function(String mesage)? authError,
     TResult? Function(UserModel userentity)? authenticated,
+    TResult? Function(UserModel? usermode)? logined,
+    TResult? Function()? logOuted,
     TResult? Function()? signupSuccessState,
   }) {
     return initial?.call();
@@ -1194,6 +1395,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult Function()? initial,
     TResult Function(String mesage)? authError,
     TResult Function(UserModel userentity)? authenticated,
+    TResult Function(UserModel? usermode)? logined,
+    TResult Function()? logOuted,
     TResult Function()? signupSuccessState,
     required TResult orElse(),
   }) {
@@ -1209,6 +1412,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(AuthError value) authError,
     required TResult Function(Authenticated value) authenticated,
+    required TResult Function(Logined value) logined,
+    required TResult Function(logOuted value) logOuted,
     required TResult Function(SignupSuccessState value) signupSuccessState,
   }) {
     return initial(this);
@@ -1220,6 +1425,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(AuthError value)? authError,
     TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(Logined value)? logined,
+    TResult? Function(logOuted value)? logOuted,
     TResult? Function(SignupSuccessState value)? signupSuccessState,
   }) {
     return initial?.call(this);
@@ -1231,6 +1438,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(AuthError value)? authError,
     TResult Function(Authenticated value)? authenticated,
+    TResult Function(Logined value)? logined,
+    TResult Function(logOuted value)? logOuted,
     TResult Function(SignupSuccessState value)? signupSuccessState,
     required TResult orElse(),
   }) {
@@ -1324,6 +1533,8 @@ class _$AuthErrorImpl with DiagnosticableTreeMixin implements AuthError {
     required TResult Function() initial,
     required TResult Function(String mesage) authError,
     required TResult Function(UserModel userentity) authenticated,
+    required TResult Function(UserModel? usermode) logined,
+    required TResult Function() logOuted,
     required TResult Function() signupSuccessState,
   }) {
     return authError(mesage);
@@ -1335,6 +1546,8 @@ class _$AuthErrorImpl with DiagnosticableTreeMixin implements AuthError {
     TResult? Function()? initial,
     TResult? Function(String mesage)? authError,
     TResult? Function(UserModel userentity)? authenticated,
+    TResult? Function(UserModel? usermode)? logined,
+    TResult? Function()? logOuted,
     TResult? Function()? signupSuccessState,
   }) {
     return authError?.call(mesage);
@@ -1346,6 +1559,8 @@ class _$AuthErrorImpl with DiagnosticableTreeMixin implements AuthError {
     TResult Function()? initial,
     TResult Function(String mesage)? authError,
     TResult Function(UserModel userentity)? authenticated,
+    TResult Function(UserModel? usermode)? logined,
+    TResult Function()? logOuted,
     TResult Function()? signupSuccessState,
     required TResult orElse(),
   }) {
@@ -1361,6 +1576,8 @@ class _$AuthErrorImpl with DiagnosticableTreeMixin implements AuthError {
     required TResult Function(_Initial value) initial,
     required TResult Function(AuthError value) authError,
     required TResult Function(Authenticated value) authenticated,
+    required TResult Function(Logined value) logined,
+    required TResult Function(logOuted value) logOuted,
     required TResult Function(SignupSuccessState value) signupSuccessState,
   }) {
     return authError(this);
@@ -1372,6 +1589,8 @@ class _$AuthErrorImpl with DiagnosticableTreeMixin implements AuthError {
     TResult? Function(_Initial value)? initial,
     TResult? Function(AuthError value)? authError,
     TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(Logined value)? logined,
+    TResult? Function(logOuted value)? logOuted,
     TResult? Function(SignupSuccessState value)? signupSuccessState,
   }) {
     return authError?.call(this);
@@ -1383,6 +1602,8 @@ class _$AuthErrorImpl with DiagnosticableTreeMixin implements AuthError {
     TResult Function(_Initial value)? initial,
     TResult Function(AuthError value)? authError,
     TResult Function(Authenticated value)? authenticated,
+    TResult Function(Logined value)? logined,
+    TResult Function(logOuted value)? logOuted,
     TResult Function(SignupSuccessState value)? signupSuccessState,
     required TResult orElse(),
   }) {
@@ -1487,6 +1708,8 @@ class _$AuthenticatedImpl
     required TResult Function() initial,
     required TResult Function(String mesage) authError,
     required TResult Function(UserModel userentity) authenticated,
+    required TResult Function(UserModel? usermode) logined,
+    required TResult Function() logOuted,
     required TResult Function() signupSuccessState,
   }) {
     return authenticated(userentity);
@@ -1498,6 +1721,8 @@ class _$AuthenticatedImpl
     TResult? Function()? initial,
     TResult? Function(String mesage)? authError,
     TResult? Function(UserModel userentity)? authenticated,
+    TResult? Function(UserModel? usermode)? logined,
+    TResult? Function()? logOuted,
     TResult? Function()? signupSuccessState,
   }) {
     return authenticated?.call(userentity);
@@ -1509,6 +1734,8 @@ class _$AuthenticatedImpl
     TResult Function()? initial,
     TResult Function(String mesage)? authError,
     TResult Function(UserModel userentity)? authenticated,
+    TResult Function(UserModel? usermode)? logined,
+    TResult Function()? logOuted,
     TResult Function()? signupSuccessState,
     required TResult orElse(),
   }) {
@@ -1524,6 +1751,8 @@ class _$AuthenticatedImpl
     required TResult Function(_Initial value) initial,
     required TResult Function(AuthError value) authError,
     required TResult Function(Authenticated value) authenticated,
+    required TResult Function(Logined value) logined,
+    required TResult Function(logOuted value) logOuted,
     required TResult Function(SignupSuccessState value) signupSuccessState,
   }) {
     return authenticated(this);
@@ -1535,6 +1764,8 @@ class _$AuthenticatedImpl
     TResult? Function(_Initial value)? initial,
     TResult? Function(AuthError value)? authError,
     TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(Logined value)? logined,
+    TResult? Function(logOuted value)? logOuted,
     TResult? Function(SignupSuccessState value)? signupSuccessState,
   }) {
     return authenticated?.call(this);
@@ -1546,6 +1777,8 @@ class _$AuthenticatedImpl
     TResult Function(_Initial value)? initial,
     TResult Function(AuthError value)? authError,
     TResult Function(Authenticated value)? authenticated,
+    TResult Function(Logined value)? logined,
+    TResult Function(logOuted value)? logOuted,
     TResult Function(SignupSuccessState value)? signupSuccessState,
     required TResult orElse(),
   }) {
@@ -1566,6 +1799,314 @@ abstract class Authenticated implements AuthState {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AuthenticatedImplCopyWith<_$AuthenticatedImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoginedImplCopyWith<$Res> {
+  factory _$$LoginedImplCopyWith(
+          _$LoginedImpl value, $Res Function(_$LoginedImpl) then) =
+      __$$LoginedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({UserModel? usermode});
+}
+
+/// @nodoc
+class __$$LoginedImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$LoginedImpl>
+    implements _$$LoginedImplCopyWith<$Res> {
+  __$$LoginedImplCopyWithImpl(
+      _$LoginedImpl _value, $Res Function(_$LoginedImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? usermode = freezed,
+  }) {
+    return _then(_$LoginedImpl(
+      freezed == usermode
+          ? _value.usermode
+          : usermode // ignore: cast_nullable_to_non_nullable
+              as UserModel?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoginedImpl with DiagnosticableTreeMixin implements Logined {
+  const _$LoginedImpl(this.usermode);
+
+  @override
+  final UserModel? usermode;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AuthState.logined(usermode: $usermode)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AuthState.logined'))
+      ..add(DiagnosticsProperty('usermode', usermode));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoginedImpl &&
+            (identical(other.usermode, usermode) ||
+                other.usermode == usermode));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, usermode);
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoginedImplCopyWith<_$LoginedImpl> get copyWith =>
+      __$$LoginedImplCopyWithImpl<_$LoginedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String mesage) authError,
+    required TResult Function(UserModel userentity) authenticated,
+    required TResult Function(UserModel? usermode) logined,
+    required TResult Function() logOuted,
+    required TResult Function() signupSuccessState,
+  }) {
+    return logined(usermode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String mesage)? authError,
+    TResult? Function(UserModel userentity)? authenticated,
+    TResult? Function(UserModel? usermode)? logined,
+    TResult? Function()? logOuted,
+    TResult? Function()? signupSuccessState,
+  }) {
+    return logined?.call(usermode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String mesage)? authError,
+    TResult Function(UserModel userentity)? authenticated,
+    TResult Function(UserModel? usermode)? logined,
+    TResult Function()? logOuted,
+    TResult Function()? signupSuccessState,
+    required TResult orElse(),
+  }) {
+    if (logined != null) {
+      return logined(usermode);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(AuthError value) authError,
+    required TResult Function(Authenticated value) authenticated,
+    required TResult Function(Logined value) logined,
+    required TResult Function(logOuted value) logOuted,
+    required TResult Function(SignupSuccessState value) signupSuccessState,
+  }) {
+    return logined(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(AuthError value)? authError,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(Logined value)? logined,
+    TResult? Function(logOuted value)? logOuted,
+    TResult? Function(SignupSuccessState value)? signupSuccessState,
+  }) {
+    return logined?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(AuthError value)? authError,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Logined value)? logined,
+    TResult Function(logOuted value)? logOuted,
+    TResult Function(SignupSuccessState value)? signupSuccessState,
+    required TResult orElse(),
+  }) {
+    if (logined != null) {
+      return logined(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Logined implements AuthState {
+  const factory Logined(final UserModel? usermode) = _$LoginedImpl;
+
+  UserModel? get usermode;
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LoginedImplCopyWith<_$LoginedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$logOutedImplCopyWith<$Res> {
+  factory _$$logOutedImplCopyWith(
+          _$logOutedImpl value, $Res Function(_$logOutedImpl) then) =
+      __$$logOutedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$logOutedImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$logOutedImpl>
+    implements _$$logOutedImplCopyWith<$Res> {
+  __$$logOutedImplCopyWithImpl(
+      _$logOutedImpl _value, $Res Function(_$logOutedImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$logOutedImpl with DiagnosticableTreeMixin implements logOuted {
+  const _$logOutedImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AuthState.logOuted()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'AuthState.logOuted'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$logOutedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String mesage) authError,
+    required TResult Function(UserModel userentity) authenticated,
+    required TResult Function(UserModel? usermode) logined,
+    required TResult Function() logOuted,
+    required TResult Function() signupSuccessState,
+  }) {
+    return logOuted();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String mesage)? authError,
+    TResult? Function(UserModel userentity)? authenticated,
+    TResult? Function(UserModel? usermode)? logined,
+    TResult? Function()? logOuted,
+    TResult? Function()? signupSuccessState,
+  }) {
+    return logOuted?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String mesage)? authError,
+    TResult Function(UserModel userentity)? authenticated,
+    TResult Function(UserModel? usermode)? logined,
+    TResult Function()? logOuted,
+    TResult Function()? signupSuccessState,
+    required TResult orElse(),
+  }) {
+    if (logOuted != null) {
+      return logOuted();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(AuthError value) authError,
+    required TResult Function(Authenticated value) authenticated,
+    required TResult Function(Logined value) logined,
+    required TResult Function(logOuted value) logOuted,
+    required TResult Function(SignupSuccessState value) signupSuccessState,
+  }) {
+    return logOuted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(AuthError value)? authError,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(Logined value)? logined,
+    TResult? Function(logOuted value)? logOuted,
+    TResult? Function(SignupSuccessState value)? signupSuccessState,
+  }) {
+    return logOuted?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(AuthError value)? authError,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Logined value)? logined,
+    TResult Function(logOuted value)? logOuted,
+    TResult Function(SignupSuccessState value)? signupSuccessState,
+    required TResult orElse(),
+  }) {
+    if (logOuted != null) {
+      return logOuted(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class logOuted implements AuthState {
+  const factory logOuted() = _$logOutedImpl;
 }
 
 /// @nodoc
@@ -1620,6 +2161,8 @@ class _$SignupSuccessStateImpl
     required TResult Function() initial,
     required TResult Function(String mesage) authError,
     required TResult Function(UserModel userentity) authenticated,
+    required TResult Function(UserModel? usermode) logined,
+    required TResult Function() logOuted,
     required TResult Function() signupSuccessState,
   }) {
     return signupSuccessState();
@@ -1631,6 +2174,8 @@ class _$SignupSuccessStateImpl
     TResult? Function()? initial,
     TResult? Function(String mesage)? authError,
     TResult? Function(UserModel userentity)? authenticated,
+    TResult? Function(UserModel? usermode)? logined,
+    TResult? Function()? logOuted,
     TResult? Function()? signupSuccessState,
   }) {
     return signupSuccessState?.call();
@@ -1642,6 +2187,8 @@ class _$SignupSuccessStateImpl
     TResult Function()? initial,
     TResult Function(String mesage)? authError,
     TResult Function(UserModel userentity)? authenticated,
+    TResult Function(UserModel? usermode)? logined,
+    TResult Function()? logOuted,
     TResult Function()? signupSuccessState,
     required TResult orElse(),
   }) {
@@ -1657,6 +2204,8 @@ class _$SignupSuccessStateImpl
     required TResult Function(_Initial value) initial,
     required TResult Function(AuthError value) authError,
     required TResult Function(Authenticated value) authenticated,
+    required TResult Function(Logined value) logined,
+    required TResult Function(logOuted value) logOuted,
     required TResult Function(SignupSuccessState value) signupSuccessState,
   }) {
     return signupSuccessState(this);
@@ -1668,6 +2217,8 @@ class _$SignupSuccessStateImpl
     TResult? Function(_Initial value)? initial,
     TResult? Function(AuthError value)? authError,
     TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(Logined value)? logined,
+    TResult? Function(logOuted value)? logOuted,
     TResult? Function(SignupSuccessState value)? signupSuccessState,
   }) {
     return signupSuccessState?.call(this);
@@ -1679,6 +2230,8 @@ class _$SignupSuccessStateImpl
     TResult Function(_Initial value)? initial,
     TResult Function(AuthError value)? authError,
     TResult Function(Authenticated value)? authenticated,
+    TResult Function(Logined value)? logined,
+    TResult Function(logOuted value)? logOuted,
     TResult Function(SignupSuccessState value)? signupSuccessState,
     required TResult orElse(),
   }) {

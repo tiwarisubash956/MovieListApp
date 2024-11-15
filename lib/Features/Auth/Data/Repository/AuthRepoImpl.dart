@@ -31,4 +31,24 @@ class Authrepoimpl implements Authrepo {
       return left(ServerFailure(message: "$e"));
     }
   }
+
+  @override
+  Future<Either<Failure, UserModel?>> checkAuthStatus() async {
+    try {
+      final result = await authDataSource.getCurrentUser();
+      return right(result);
+    } catch (e) {
+      return left(ServerFailure(message: "$e"));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> logout() async {
+    try {
+      final result = await authDataSource.Logout();
+      return right(result);
+    } on Exception catch (e) {
+      return left(ServerFailure(message: "$e"));
+    }
+  }
 }

@@ -3,12 +3,18 @@ import 'package:flutter/material.dart';
 class CustomizedTextField extends StatelessWidget {
   final TextEditingController controller;
   final String label;
+  final String? Function(String?)? validator;
+
   const CustomizedTextField(
-      {super.key, required this.controller, required this.label});
+      {super.key,
+      required this.controller,
+      required this.label,
+      required this.validator});
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+        validator: validator,
         style: const TextStyle(
           color: Colors.white, // Change the text color here
           fontSize: 16, // Optional: Change the font size

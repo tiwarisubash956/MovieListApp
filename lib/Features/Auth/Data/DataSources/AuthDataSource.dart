@@ -2,11 +2,12 @@ import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:movielistapp/Core/Error/exception.dart';
 import 'package:movielistapp/Features/Auth/Data/Models/UserModel.dart';
-import 'package:movielistapp/Features/Auth/Domain/Entities/user_Entity.dart';
 
 abstract class AuthDataSource {
   Future<void> signup(String email, String password);
   Future<UserModel> signin(String email, String password);
+  Future<UserModel?> getCurrentUser();
+  Future<void> Logout();
 }
 
 class AuthDataSourceimpl implements AuthDataSource {
@@ -35,6 +36,26 @@ class AuthDataSourceimpl implements AuthDataSource {
     } on DioException catch (e) {
       throw ServerException("$e");
       //
+    }
+  }
+
+  @override
+  Future<UserModel?> getCurrentUser() async {
+    try {
+      final user = firebaseAuth.currentUser;
+      return user != null ? UserModel.fromFirebaseUser(user) : null;
+    } on DioException catch (e) {
+      throw ServerException("$e");
+    }
+  }
+
+  @override
+  // ignore: non_constant_identifier_names
+  Future<void> Logout() async {
+    try {
+      await firebaseAuth.signOut();
+    } on DioException catch (e) {
+      throw ServerException("$e");
     }
   }
 
