@@ -1054,7 +1054,7 @@ mixin _$AuthState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(String mesage) authError,
-    required TResult Function(UserEntity userentity) authenticated,
+    required TResult Function(UserModel userentity) authenticated,
     required TResult Function() signupSuccessState,
   }) =>
       throw _privateConstructorUsedError;
@@ -1062,7 +1062,7 @@ mixin _$AuthState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(String mesage)? authError,
-    TResult? Function(UserEntity userentity)? authenticated,
+    TResult? Function(UserModel userentity)? authenticated,
     TResult? Function()? signupSuccessState,
   }) =>
       throw _privateConstructorUsedError;
@@ -1070,7 +1070,7 @@ mixin _$AuthState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(String mesage)? authError,
-    TResult Function(UserEntity userentity)? authenticated,
+    TResult Function(UserModel userentity)? authenticated,
     TResult Function()? signupSuccessState,
     required TResult orElse(),
   }) =>
@@ -1171,7 +1171,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(String mesage) authError,
-    required TResult Function(UserEntity userentity) authenticated,
+    required TResult Function(UserModel userentity) authenticated,
     required TResult Function() signupSuccessState,
   }) {
     return initial();
@@ -1182,7 +1182,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(String mesage)? authError,
-    TResult? Function(UserEntity userentity)? authenticated,
+    TResult? Function(UserModel userentity)? authenticated,
     TResult? Function()? signupSuccessState,
   }) {
     return initial?.call();
@@ -1193,7 +1193,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(String mesage)? authError,
-    TResult Function(UserEntity userentity)? authenticated,
+    TResult Function(UserModel userentity)? authenticated,
     TResult Function()? signupSuccessState,
     required TResult orElse(),
   }) {
@@ -1323,7 +1323,7 @@ class _$AuthErrorImpl with DiagnosticableTreeMixin implements AuthError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(String mesage) authError,
-    required TResult Function(UserEntity userentity) authenticated,
+    required TResult Function(UserModel userentity) authenticated,
     required TResult Function() signupSuccessState,
   }) {
     return authError(mesage);
@@ -1334,7 +1334,7 @@ class _$AuthErrorImpl with DiagnosticableTreeMixin implements AuthError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(String mesage)? authError,
-    TResult? Function(UserEntity userentity)? authenticated,
+    TResult? Function(UserModel userentity)? authenticated,
     TResult? Function()? signupSuccessState,
   }) {
     return authError?.call(mesage);
@@ -1345,7 +1345,7 @@ class _$AuthErrorImpl with DiagnosticableTreeMixin implements AuthError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(String mesage)? authError,
-    TResult Function(UserEntity userentity)? authenticated,
+    TResult Function(UserModel userentity)? authenticated,
     TResult Function()? signupSuccessState,
     required TResult orElse(),
   }) {
@@ -1411,7 +1411,7 @@ abstract class _$$AuthenticatedImplCopyWith<$Res> {
           _$AuthenticatedImpl value, $Res Function(_$AuthenticatedImpl) then) =
       __$$AuthenticatedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({UserEntity userentity});
+  $Res call({UserModel userentity});
 }
 
 /// @nodoc
@@ -1433,7 +1433,7 @@ class __$$AuthenticatedImplCopyWithImpl<$Res>
       null == userentity
           ? _value.userentity
           : userentity // ignore: cast_nullable_to_non_nullable
-              as UserEntity,
+              as UserModel,
     ));
   }
 }
@@ -1446,7 +1446,7 @@ class _$AuthenticatedImpl
   const _$AuthenticatedImpl(this.userentity);
 
   @override
-  final UserEntity userentity;
+  final UserModel userentity;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -1486,7 +1486,7 @@ class _$AuthenticatedImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(String mesage) authError,
-    required TResult Function(UserEntity userentity) authenticated,
+    required TResult Function(UserModel userentity) authenticated,
     required TResult Function() signupSuccessState,
   }) {
     return authenticated(userentity);
@@ -1497,7 +1497,7 @@ class _$AuthenticatedImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(String mesage)? authError,
-    TResult? Function(UserEntity userentity)? authenticated,
+    TResult? Function(UserModel userentity)? authenticated,
     TResult? Function()? signupSuccessState,
   }) {
     return authenticated?.call(userentity);
@@ -1508,7 +1508,7 @@ class _$AuthenticatedImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(String mesage)? authError,
-    TResult Function(UserEntity userentity)? authenticated,
+    TResult Function(UserModel userentity)? authenticated,
     TResult Function()? signupSuccessState,
     required TResult orElse(),
   }) {
@@ -1557,10 +1557,9 @@ class _$AuthenticatedImpl
 }
 
 abstract class Authenticated implements AuthState {
-  const factory Authenticated(final UserEntity userentity) =
-      _$AuthenticatedImpl;
+  const factory Authenticated(final UserModel userentity) = _$AuthenticatedImpl;
 
-  UserEntity get userentity;
+  UserModel get userentity;
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -1620,7 +1619,7 @@ class _$SignupSuccessStateImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(String mesage) authError,
-    required TResult Function(UserEntity userentity) authenticated,
+    required TResult Function(UserModel userentity) authenticated,
     required TResult Function() signupSuccessState,
   }) {
     return signupSuccessState();
@@ -1631,7 +1630,7 @@ class _$SignupSuccessStateImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(String mesage)? authError,
-    TResult? Function(UserEntity userentity)? authenticated,
+    TResult? Function(UserModel userentity)? authenticated,
     TResult? Function()? signupSuccessState,
   }) {
     return signupSuccessState?.call();
@@ -1642,7 +1641,7 @@ class _$SignupSuccessStateImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(String mesage)? authError,
-    TResult Function(UserEntity userentity)? authenticated,
+    TResult Function(UserModel userentity)? authenticated,
     TResult Function()? signupSuccessState,
     required TResult orElse(),
   }) {

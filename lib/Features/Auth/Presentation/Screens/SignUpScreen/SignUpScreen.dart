@@ -7,14 +7,14 @@ import 'package:movielistapp/Features/Auth/Widgets/CustomizedElevaedButton.dart'
 import 'package:movielistapp/Features/Auth/Widgets/CustomizedTextFormfield.dart';
 
 @RoutePage()
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   @override
@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Movie",
+              "MovieFlex",
               style: GoogleFonts.bebasNeue(
                 textStyle: const TextStyle(
                   fontSize: 48,
@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 40,
             ),
             Text(
-              "Sign In",
+              "Sign Up",
               style: GoogleFonts.bebasNeue(
                 textStyle: const TextStyle(
                   fontSize: 20,
@@ -63,12 +63,11 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             CustomElevatedButton(
                 onpressed: () {
-                  print(emailController.text);
                   context.read<AuthBloc>().add(SignUp(
                       emailController.text,
                       passwordController.text));
                 },
-                label: "Sign In")
+                label: "Sign Up")
           ],
         ),
       ),

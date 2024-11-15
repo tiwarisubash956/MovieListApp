@@ -4,6 +4,8 @@ import 'package:movielistapp/Core/Network/dio_config.dart';
 import 'package:movielistapp/Features/Auth/Data/DataSources/AuthDataSource.dart';
 import 'package:movielistapp/Features/Auth/Data/Repository/AuthRepoImpl.dart';
 import 'package:movielistapp/Features/Auth/Domain/Repository/AuthRepo.dart';
+import 'package:movielistapp/Features/Auth/Domain/UseCases/SignInUseCase.dart';
+import 'package:movielistapp/Features/Auth/Domain/UseCases/signupUsecase.dart';
 import 'package:movielistapp/Features/Auth/Presentation/bloc/auth_bloc.dart';
 import 'package:movielistapp/Features/Pages/HomePage/bloc/home_page_bloc.dart';
 import 'package:movielistapp/Features/Pages/MovieScreen/Data/DataSource/MovieDataSource.dart';
@@ -18,7 +20,7 @@ import 'package:movielistapp/Features/Pages/SearchScreen/Presentation/bloc/searc
 final sl = GetIt.instance;
 
 Future<void> init() async {
-  sl.registerFactory(() => AuthBloc(signupusecase: sl()));
+  sl.registerFactory(() => AuthBloc(signinusecase: sl(), signupusecase: sl()));
 
   sl.registerFactory(() => HomePageBloc());
 
@@ -27,6 +29,9 @@ Future<void> init() async {
 
   // Register the search bloc with dependencies
   sl.registerFactory(() => SearchBloc(searchRepoimpl: sl()));
+
+  sl.registerFactory(() => Signupusecase(authrepo: sl()));
+  sl.registerFactory(() => Signinusecase(authrepo: sl()));
 
   // Register Dio for network calls
   sl.registerLazySingleton(() => createDio());

@@ -15,6 +15,9 @@ class AppRouter extends $AppRouter {
         AutoRoute(page: MoviesRoute.page),
         AutoRoute(page: SearchRoute.page),
         AutoRoute(page: MovieDetailRoute.page),
-        AutoRoute(page: LoginRoute.page, initial: true)
+        AutoRoute(
+          page: SignUpRoute.page,
+        ),
+        AutoRoute(page: Signinscreen.page, initial: true)
       ];
 }

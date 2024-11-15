@@ -8,44 +8,40 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i7;
-import 'package:flutter/material.dart' as _i8;
-import 'package:movielistapp/Features/Auth/Presentation/Screens/LoginScreen/LoginScreen.dart'
-    as _i2;
-import 'package:movielistapp/Features/Auth/Presentation/Screens/SplashScreen/SplashPage.dart'
+import 'package:auto_route/auto_route.dart' as _i8;
+import 'package:flutter/material.dart' as _i9;
+import 'package:movielistapp/Features/Auth/Presentation/Screens/SignInScreen/SignInScreen.dart'
     as _i6;
+import 'package:movielistapp/Features/Auth/Presentation/Screens/SignUpScreen/SignUpScreen.dart'
+    as _i5;
+import 'package:movielistapp/Features/Auth/Presentation/Screens/SplashScreen/SplashPage.dart'
+    as _i7;
 import 'package:movielistapp/Features/Pages/HomePage/HomePage.dart' as _i1;
 import 'package:movielistapp/Features/Pages/MovieDetailPage/MovieDetailPage.dart'
-    as _i3;
+    as _i2;
 import 'package:movielistapp/Features/Pages/MovieScreen/Data/Model/movieModel.dart'
-    as _i9;
+    as _i10;
 import 'package:movielistapp/Features/Pages/MovieScreen/Presentation/MoviesScreen.dart'
-    as _i4;
+    as _i3;
 import 'package:movielistapp/Features/Pages/SearchScreen/Presentation/SearchScreen.dart'
-    as _i5;
+    as _i4;
 
-abstract class $AppRouter extends _i7.RootStackRouter {
+abstract class $AppRouter extends _i8.RootStackRouter {
   $AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, _i7.PageFactory> pagesMap = {
+  final Map<String, _i8.PageFactory> pagesMap = {
     HomeRoute.name: (routeData) {
-      return _i7.AutoRoutePage<dynamic>(
+      return _i8.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i1.HomePage(),
       );
     },
-    LoginRoute.name: (routeData) {
-      return _i7.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i2.LoginScreen(),
-      );
-    },
     MovieDetailRoute.name: (routeData) {
       final args = routeData.argsAs<MovieDetailRouteArgs>();
-      return _i7.AutoRoutePage<dynamic>(
+      return _i8.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i3.MovieDetailPage(
+        child: _i2.MovieDetailPage(
           key: args.key,
           movie: args.movie,
         ),
@@ -54,25 +50,39 @@ abstract class $AppRouter extends _i7.RootStackRouter {
     MoviesRoute.name: (routeData) {
       final args = routeData.argsAs<MoviesRouteArgs>(
           orElse: () => const MoviesRouteArgs());
-      return _i7.AutoRoutePage<dynamic>(
+      return _i8.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i4.MoviesPage(key: args.key),
+        child: _i3.MoviesPage(key: args.key),
       );
     },
     SearchRoute.name: (routeData) {
       final args = routeData.argsAs<SearchRouteArgs>();
-      return _i7.AutoRoutePage<dynamic>(
+      return _i8.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i5.SearchScreen(
+        child: _i4.SearchScreen(
           key: args.key,
           searchTerm: args.searchTerm,
         ),
       );
     },
-    SplashRoute.name: (routeData) {
-      return _i7.AutoRoutePage<dynamic>(
+    SignUpRoute.name: (routeData) {
+      return _i8.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i6.SplashPage(),
+        child: const _i5.SignUpScreen(),
+      );
+    },
+    Signinscreen.name: (routeData) {
+      final args = routeData.argsAs<SigninscreenArgs>(
+          orElse: () => const SigninscreenArgs());
+      return _i8.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i6.Signinscreen(key: args.key),
+      );
+    },
+    SplashRoute.name: (routeData) {
+      return _i8.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i7.SplashPage(),
       );
     },
   };
@@ -80,8 +90,8 @@ abstract class $AppRouter extends _i7.RootStackRouter {
 
 /// generated route for
 /// [_i1.HomePage]
-class HomeRoute extends _i7.PageRouteInfo<void> {
-  const HomeRoute({List<_i7.PageRouteInfo>? children})
+class HomeRoute extends _i8.PageRouteInfo<void> {
+  const HomeRoute({List<_i8.PageRouteInfo>? children})
       : super(
           HomeRoute.name,
           initialChildren: children,
@@ -89,30 +99,16 @@ class HomeRoute extends _i7.PageRouteInfo<void> {
 
   static const String name = 'HomeRoute';
 
-  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
+  static const _i8.PageInfo<void> page = _i8.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i2.LoginScreen]
-class LoginRoute extends _i7.PageRouteInfo<void> {
-  const LoginRoute({List<_i7.PageRouteInfo>? children})
-      : super(
-          LoginRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'LoginRoute';
-
-  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i3.MovieDetailPage]
-class MovieDetailRoute extends _i7.PageRouteInfo<MovieDetailRouteArgs> {
+/// [_i2.MovieDetailPage]
+class MovieDetailRoute extends _i8.PageRouteInfo<MovieDetailRouteArgs> {
   MovieDetailRoute({
-    _i8.Key? key,
-    required _i9.MovieModel movie,
-    List<_i7.PageRouteInfo>? children,
+    _i9.Key? key,
+    required _i10.MovieModel movie,
+    List<_i8.PageRouteInfo>? children,
   }) : super(
           MovieDetailRoute.name,
           args: MovieDetailRouteArgs(
@@ -124,8 +120,8 @@ class MovieDetailRoute extends _i7.PageRouteInfo<MovieDetailRouteArgs> {
 
   static const String name = 'MovieDetailRoute';
 
-  static const _i7.PageInfo<MovieDetailRouteArgs> page =
-      _i7.PageInfo<MovieDetailRouteArgs>(name);
+  static const _i8.PageInfo<MovieDetailRouteArgs> page =
+      _i8.PageInfo<MovieDetailRouteArgs>(name);
 }
 
 class MovieDetailRouteArgs {
@@ -134,9 +130,9 @@ class MovieDetailRouteArgs {
     required this.movie,
   });
 
-  final _i8.Key? key;
+  final _i9.Key? key;
 
-  final _i9.MovieModel movie;
+  final _i10.MovieModel movie;
 
   @override
   String toString() {
@@ -145,11 +141,11 @@ class MovieDetailRouteArgs {
 }
 
 /// generated route for
-/// [_i4.MoviesPage]
-class MoviesRoute extends _i7.PageRouteInfo<MoviesRouteArgs> {
+/// [_i3.MoviesPage]
+class MoviesRoute extends _i8.PageRouteInfo<MoviesRouteArgs> {
   MoviesRoute({
-    _i8.Key? key,
-    List<_i7.PageRouteInfo>? children,
+    _i9.Key? key,
+    List<_i8.PageRouteInfo>? children,
   }) : super(
           MoviesRoute.name,
           args: MoviesRouteArgs(key: key),
@@ -158,14 +154,14 @@ class MoviesRoute extends _i7.PageRouteInfo<MoviesRouteArgs> {
 
   static const String name = 'MoviesRoute';
 
-  static const _i7.PageInfo<MoviesRouteArgs> page =
-      _i7.PageInfo<MoviesRouteArgs>(name);
+  static const _i8.PageInfo<MoviesRouteArgs> page =
+      _i8.PageInfo<MoviesRouteArgs>(name);
 }
 
 class MoviesRouteArgs {
   const MoviesRouteArgs({this.key});
 
-  final _i8.Key? key;
+  final _i9.Key? key;
 
   @override
   String toString() {
@@ -174,12 +170,12 @@ class MoviesRouteArgs {
 }
 
 /// generated route for
-/// [_i5.SearchScreen]
-class SearchRoute extends _i7.PageRouteInfo<SearchRouteArgs> {
+/// [_i4.SearchScreen]
+class SearchRoute extends _i8.PageRouteInfo<SearchRouteArgs> {
   SearchRoute({
-    _i8.Key? key,
+    _i9.Key? key,
     required String searchTerm,
-    List<_i7.PageRouteInfo>? children,
+    List<_i8.PageRouteInfo>? children,
   }) : super(
           SearchRoute.name,
           args: SearchRouteArgs(
@@ -191,8 +187,8 @@ class SearchRoute extends _i7.PageRouteInfo<SearchRouteArgs> {
 
   static const String name = 'SearchRoute';
 
-  static const _i7.PageInfo<SearchRouteArgs> page =
-      _i7.PageInfo<SearchRouteArgs>(name);
+  static const _i8.PageInfo<SearchRouteArgs> page =
+      _i8.PageInfo<SearchRouteArgs>(name);
 }
 
 class SearchRouteArgs {
@@ -201,7 +197,7 @@ class SearchRouteArgs {
     required this.searchTerm,
   });
 
-  final _i8.Key? key;
+  final _i9.Key? key;
 
   final String searchTerm;
 
@@ -212,9 +208,52 @@ class SearchRouteArgs {
 }
 
 /// generated route for
-/// [_i6.SplashPage]
-class SplashRoute extends _i7.PageRouteInfo<void> {
-  const SplashRoute({List<_i7.PageRouteInfo>? children})
+/// [_i5.SignUpScreen]
+class SignUpRoute extends _i8.PageRouteInfo<void> {
+  const SignUpRoute({List<_i8.PageRouteInfo>? children})
+      : super(
+          SignUpRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SignUpRoute';
+
+  static const _i8.PageInfo<void> page = _i8.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i6.Signinscreen]
+class Signinscreen extends _i8.PageRouteInfo<SigninscreenArgs> {
+  Signinscreen({
+    _i9.Key? key,
+    List<_i8.PageRouteInfo>? children,
+  }) : super(
+          Signinscreen.name,
+          args: SigninscreenArgs(key: key),
+          initialChildren: children,
+        );
+
+  static const String name = 'Signinscreen';
+
+  static const _i8.PageInfo<SigninscreenArgs> page =
+      _i8.PageInfo<SigninscreenArgs>(name);
+}
+
+class SigninscreenArgs {
+  const SigninscreenArgs({this.key});
+
+  final _i9.Key? key;
+
+  @override
+  String toString() {
+    return 'SigninscreenArgs{key: $key}';
+  }
+}
+
+/// generated route for
+/// [_i7.SplashPage]
+class SplashRoute extends _i8.PageRouteInfo<void> {
+  const SplashRoute({List<_i8.PageRouteInfo>? children})
       : super(
           SplashRoute.name,
           initialChildren: children,
@@ -222,5 +261,5 @@ class SplashRoute extends _i7.PageRouteInfo<void> {
 
   static const String name = 'SplashRoute';
 
-  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
+  static const _i8.PageInfo<void> page = _i8.PageInfo<void>(name);
 }
