@@ -7,4 +7,5 @@ abstract class Authrepo {
   Future<Either<Failure, UserModel>> signin(String email, String password);
   Future<Either<Failure, UserModel?>> checkAuthStatus();
   Future<Either<Failure, void>> logout();
+  Future<Either<Failure, void>> sendOtp(String Email,String Otp);
 }

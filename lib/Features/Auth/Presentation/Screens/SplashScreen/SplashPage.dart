@@ -21,7 +21,7 @@ class _SplashPageState extends State<SplashPage> {
 
     // Trigger navigation after a delay to simulate splash screen behavior
 
-    context.read<AuthBloc>().add(CheckAuthStatus());
+    context.read<AuthBloc>().add(const CheckAuthStatus());
   }
 
   @override

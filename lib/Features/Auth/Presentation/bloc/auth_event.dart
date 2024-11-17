@@ -11,5 +11,6 @@ class AuthEvent with _$AuthEvent {
   const factory AuthEvent.SignUpEvent(String Email,String Password)=SignUp;
   const factory AuthEvent.CheckAuthStatus()=CheckAuthStatus;
   const factory AuthEvent.LogoutEvent()= LogOut;
+  const factory AuthEvent.SendOtpEvent(String email) = SendOtp;
 
 }

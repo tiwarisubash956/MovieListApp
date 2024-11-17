@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
 import 'package:movielistapp/Core/Network/dio_config.dart';
@@ -6,6 +7,7 @@ import 'package:movielistapp/Features/Auth/Data/Repository/AuthRepoImpl.dart';
 import 'package:movielistapp/Features/Auth/Domain/Repository/AuthRepo.dart';
 import 'package:movielistapp/Features/Auth/Domain/UseCases/CheckAuthStatusUsecase.dart';
 import 'package:movielistapp/Features/Auth/Domain/UseCases/LogOutUsecase.dart';
+import 'package:movielistapp/Features/Auth/Domain/UseCases/SendOtpUsecase.dart';
 import 'package:movielistapp/Features/Auth/Domain/UseCases/SignInUseCase.dart';
 import 'package:movielistapp/Features/Auth/Domain/UseCases/signupUsecase.dart';
 import 'package:movielistapp/Features/Auth/Presentation/bloc/auth_bloc.dart';
@@ -23,6 +25,7 @@ final sl = GetIt.instance;
 
 Future<void> init() async {
   sl.registerFactory(() => AuthBloc(
+      sendOtpcase: sl(),
       logoutUsecase: sl(),
       checkAuthStatusUsecase: sl(),
       signinusecase: sl(),
@@ -40,6 +43,7 @@ Future<void> init() async {
   sl.registerFactory(() => Signinusecase(authrepo: sl()));
   sl.registerFactory(() => CheckAuthStatusUsecase(authrepo: sl()));
   sl.registerFactory(() => LogoutUsecase(authrepo: sl()));
+  sl.registerFactory(() => SendOtpcase(authrepo: sl()));
 
   // Register Dio for network calls
   sl.registerLazySingleton(() => createDio());
@@ -47,19 +51,21 @@ Future<void> init() async {
   // Register FirebaseAuth for user authentication
   sl.registerLazySingleton(() => FirebaseAuth.instance);
 
+  sl.registerLazySingleton(() => FirebaseFirestore.instance);
+
   //Auth repo implemtaion with dependencies
 
   sl.registerLazySingleton<Authrepo>(() => Authrepoimpl(authDataSource: sl()));
 
   // Register SearchTermDataSource implementation
-  sl.registerLazySingleton<AuthDataSource>(
-      () => AuthDataSourceimpl(dio: sl(), firebaseAuth: sl()));
+  sl.registerLazySingleton<AuthDataSource>(() => AuthDataSourceimpl(
+      dio: sl(), firebaseAuth: sl(), firebaseFirestore: sl()));
 
   sl.registerLazySingleton<Authrepoimpl>(
       () => Authrepoimpl(authDataSource: sl()));
 
-  sl.registerFactory<AuthDataSourceimpl>(
-      () => AuthDataSourceimpl(dio: sl(), firebaseAuth: sl()));
+  sl.registerFactory<AuthDataSourceimpl>(() => AuthDataSourceimpl(
+      dio: sl(), firebaseAuth: sl(), firebaseFirestore: sl()));
 
   // Register MovieRepository implementation with its dependencies
   sl.registerLazySingleton<Moviesrepo>(() => Moviesrepoimpl(

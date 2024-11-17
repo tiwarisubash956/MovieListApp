@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -5,6 +7,7 @@ import 'package:movielistapp/Core/Error/failure.dart';
 import 'package:movielistapp/Features/Auth/Data/Models/UserModel.dart';
 import 'package:movielistapp/Features/Auth/Domain/UseCases/CheckAuthStatusUsecase.dart';
 import 'package:movielistapp/Features/Auth/Domain/UseCases/LogOutUsecase.dart';
+import 'package:movielistapp/Features/Auth/Domain/UseCases/SendOtpUsecase.dart';
 import 'package:movielistapp/Features/Auth/Domain/UseCases/SignInUseCase.dart';
 import 'package:movielistapp/Features/Auth/Domain/UseCases/signupUsecase.dart';
 
@@ -13,12 +16,14 @@ part 'auth_state.dart';
 part 'auth_bloc.freezed.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
+  final SendOtpcase sendOtpcase;
   final Signupusecase signupusecase;
   final Signinusecase signinusecase;
   final CheckAuthStatusUsecase checkAuthStatusUsecase;
   final LogoutUsecase logoutUsecase;
   AuthBloc(
-      {required this.logoutUsecase,
+      {required this.sendOtpcase,
+      required this.logoutUsecase,
       required this.signinusecase,
       required this.signupusecase,
       required this.checkAuthStatusUsecase})
@@ -68,6 +73,17 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             (failure) =>
                 emit(AuthState.authError((failure as ServerFailure).message)),
             (success) => emit(const AuthState.logOuted()));
+      }
+      if (event is SendOtp) {
+        final random = Random();
+        String otp = (random.nextInt(900000) + 100000).toString();
+
+        final failureorsucces =
+            await sendOtpcase(SendOtpparamas(email: event.email, otp: otp));
+        failureorsucces.fold(
+            (failure) =>
+                emit(AuthState.authError((failure as ServerFailure).message)),
+            (success) => emit(const AuthState.sendOtpSuccessState()));
       }
     });
   }

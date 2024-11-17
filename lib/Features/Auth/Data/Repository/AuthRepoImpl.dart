@@ -1,7 +1,6 @@
 // ignore_for_file: unused_local_variable
 
 import 'package:dartz/dartz.dart';
-import 'package:movielistapp/Core/Error/exception.dart';
 import 'package:movielistapp/Core/Error/failure.dart';
 import 'package:movielistapp/Features/Auth/Data/DataSources/AuthDataSource.dart';
 import 'package:movielistapp/Features/Auth/Data/Models/UserModel.dart';
@@ -16,7 +15,7 @@ class Authrepoimpl implements Authrepo {
     try {
       final result = await authDataSource.signup(email, password);
       return right(null);
-    } on ServerException catch (e) {
+    } catch (e) {
       throw left(ServerFailure(message: "$e"));
     }
   }
@@ -27,7 +26,7 @@ class Authrepoimpl implements Authrepo {
     try {
       final result = await authDataSource.signin(email, password);
       return right(result);
-    } catch (e) {
+    } on Exception catch (e) {
       return left(ServerFailure(message: "$e"));
     }
   }
@@ -46,6 +45,16 @@ class Authrepoimpl implements Authrepo {
   Future<Either<Failure, void>> logout() async {
     try {
       final result = await authDataSource.Logout();
+      return right(result);
+    } on Exception catch (e) {
+      return left(ServerFailure(message: "$e"));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> sendOtp(String email, String otp) async {
+    try {
+      final result = await authDataSource.sendOtp(email, otp);
       return right(result);
     } on Exception catch (e) {
       return left(ServerFailure(message: "$e"));

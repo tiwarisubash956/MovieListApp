@@ -9,7 +9,7 @@ import 'package:movielistapp/Features/Auth/Widgets/CustomizedTextFormfield.dart'
 
 @RoutePage()
 class Signinscreen extends StatefulWidget {
-  Signinscreen({super.key});
+  const Signinscreen({super.key});
 
   @override
   State<Signinscreen> createState() => _SigninscreenState();
@@ -141,6 +141,22 @@ class _SigninscreenState extends State<Signinscreen> {
                                 )),
                           )
                         ],
+                      ),
+                       const SizedBox(
+                        height: 12,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          context.router.push(const ForgetPasswordRoute());
+                        },
+                        child: Text("Forget Password?",
+                            style: GoogleFonts.breeSerif(
+                              textStyle: const TextStyle(
+                                fontSize: 12,
+                                color: Colors.white,
+                                letterSpacing: 2.0,
+                              ),
+                            )),
                       )
                     ],
                   ),

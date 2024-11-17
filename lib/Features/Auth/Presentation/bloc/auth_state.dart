@@ -8,5 +8,6 @@ class AuthState with _$AuthState {
   const factory AuthState.logined(UserModel? usermode)=Logined;
   const factory AuthState.logOuted()=logOuted;
   const factory AuthState.signupSuccessState() = SignupSuccessState;
+  const factory AuthState.sendOtpSuccessState() = SendOtpSuccessState;
   
 }
